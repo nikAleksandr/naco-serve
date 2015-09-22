@@ -18,7 +18,7 @@ var script_arr = [
 //declare namespace
 var nacoCharts = nacoCharts || {};
 
-$.getMultiScripts(script_arr, '/mypath/').done(function() {
+$.getMultiScripts(script_arr, '').done(function() {
     // all scripts loaded.  Now run initialize and chart default function
 
 	//default options for NACo charts.  Can be overridden inline
