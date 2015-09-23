@@ -319,7 +319,7 @@ $.getScript('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'
 				        		document.getElementById(id + 'Legend').innerHTML = thisChart.generateLegend();
 				        		break;
 				        }
-			    	}, 500);
+			    	}, 200);
 			    } else {
 			        inView = false;  
 			    }
