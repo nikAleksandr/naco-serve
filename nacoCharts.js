@@ -285,6 +285,11 @@ $.getScript('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'
 		nacoCharts.animatedChart = function(id, type, data){
 			var inView = false;
 
+			var options = {};
+			if(data.hasOwnProperty('options')){
+				options = data.options;
+			}
+
 			var elem = '#' + id;
 			var isScrolledIntoView = function(elem){
 			    var docViewTop = $(window).scrollTop();
@@ -303,19 +308,19 @@ $.getScript('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'
 			        setTimeout(function(){ 
 				        switch(type){
 				        	case 'line':
-				        		var thisChart = new Chart(document.getElementById(id).getContext("2d")).Line(data);
+				        		var thisChart = new Chart(document.getElementById(id).getContext("2d")).Line(data, options);
 				        		document.getElementById(id + 'Legend').innerHTML = thisChart.generateLegend();
 				        		break
 				        	case 'pie':
-				        		var thisChart = new Chart(document.getElementById(id).getContext("2d")).Pie(data);
+				        		var thisChart = new Chart(document.getElementById(id).getContext("2d")).Pie(data, options);
 				        		document.getElementById(id + 'Legend').innerHTML = thisChart.generateLegend();
 				        		break;
 				        	case 'bar':
-				        		var thisChart = new Chart(document.getElementById(id).getContext("2d")).Bar(data);
+				        		var thisChart = new Chart(document.getElementById(id).getContext("2d")).Bar(data, options);
 				        		document.getElementById(id + 'Legend').innerHTML = thisChart.generateLegend();
 				        		break;
 				        	case 'stackedBar':
-				        		var thisChart = new Chart(document.getElementById(id).getContext("2d")).StackedBar(data);
+				        		var thisChart = new Chart(document.getElementById(id).getContext("2d")).StackedBar(data, options);
 				        		document.getElementById(id + 'Legend').innerHTML = thisChart.generateLegend();
 				        		break;
 				        }
