@@ -49,7 +49,7 @@ $.getScript('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'
 			    scaleShowLabels: true,
 
 			    // Interpolated JS string - can access value
-			    scaleLabel: "<%=value if(percent){+'%'}%>",
+			    scaleLabel: "<%=value + if(percent){'%'}%>",
 
 			    // Boolean - Whether the scale should stick to integers, not floats even if drawing space is there
 			    scaleIntegersOnly: true,
